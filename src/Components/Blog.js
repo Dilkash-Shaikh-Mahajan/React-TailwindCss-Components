@@ -77,7 +77,7 @@ const Blog = () => {
 							loading='lazy'
 							width='1000'
 							height='667'
-							class='h-64 w-full object-cover object-top rounded-xl transition duration-500 group-hover:rounded-3xl'
+							class='h-64 object-center w-full object-cover object-top rounded-xl transition duration-500 group-hover:rounded-3xl'
 						/>
 						<div class='space-y-2'>
 							<span class='text-cyan-500'>Backend</span>
