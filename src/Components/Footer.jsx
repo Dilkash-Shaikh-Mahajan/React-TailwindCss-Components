@@ -12,7 +12,7 @@ const Footer = () => {
 								<img
 									width='100'
 									height='42'
-									src='images/logo.svg'
+									src='/Assets/logo.svg'
 									alt='logo tailus'
 									class='w-32'
 								/>
