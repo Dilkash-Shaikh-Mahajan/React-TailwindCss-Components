@@ -5,11 +5,13 @@ import Cards from './Components/Card';
 import Team from './Components/Team';
 import Blog from './Components/Blog';
 import Footer from './Components/Footer';
+import Navbars from './Components/Navbars';
 export default function App() {
 	return (
 		<>
-			<Navbar />
-			<Analytics />
+			{/* <Navbar /> */}
+			<Navbars />
+			{/* <Analytics /> */}
 			<Blog />
 			<Team />
 			<Cards />
