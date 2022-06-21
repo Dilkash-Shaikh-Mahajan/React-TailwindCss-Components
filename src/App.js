@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import Navbar from './Components/Navbar';
-import Analytics from './Components/Analytics';
+// import Navbar from './Components/Navbar';
+// import Analytics from './Components/Analytics';
 import Cards from './Components/Card';
 import Team from './Components/Team';
 import Blog from './Components/Blog';
