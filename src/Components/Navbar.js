@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 // import Button from './Button';
 import { HiOutlineX } from 'react-icons/hi';
