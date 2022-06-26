@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 // import Button from './Button';
 import { HiOutlineX } from 'react-icons/hi';
@@ -7,8 +6,8 @@ import { Link } from 'react-router-dom';
 const Nav = () => {
 	let [open, setOpen] = useState(false);
 	return (
-		<div className='shadow-md z-10 w-full  fixed top-0 left-0'>
-			<div className='md:flex border-b  items-center justify-between bg-white  md:px-10 px-7'>
+		<div className='shadow-md w-full bg-opacity-70 backdrop-blur fixed top-0 left-0'>
+			<div className='md:flex border-b bg-opacity-70 backdrop-blur items-center justify-between bg-white  md:px-10 px-7'>
 				<div className='h-auto items-center'>
 					<Link
 						to='/'
@@ -51,11 +50,11 @@ const Nav = () => {
 				</div>
 
 				<ul
-					className={`md:flex md:items-center  md:pb-0 pb-12 absolute md:static  md:z-auto left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+					className={`md:flex md:items-center md:pb-0 pb-12  backdrop-blur absolute md:static bg-white md:z-auto left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
 						open ? ' ' : 'top-[-490px]'
 					}`}>
-					<div className='text-gray-600 lg:pr-4 '>
-						<ul className='space-y-6 tracking-wide  font-medium text-lg lg:text-sm lg:flex lg:space-y-0'>
+					<div className='text-gray-600 lg:pr-4'>
+						<ul className='space-y-6 tracking-wide font-medium text-lg lg:text-sm lg:flex lg:space-y-0'>
 							<li className='text-md text-base'>
 								<Link
 									to='signin'
