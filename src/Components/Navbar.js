@@ -1,47 +1,108 @@
 import React, { useState } from 'react';
-import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+// import Button from './Button';
+import { HiOutlineX } from 'react-icons/hi';
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
-	const [nav, setNav] = useState(false);
-
-	const handleNav = () => {
-		setNav(!nav);
-	};
-
+const Nav = () => {
+	let [open, setOpen] = useState(false);
 	return (
-		<div className='flex justify-between items-center h-24 mx-auto bg-black px-4 text-white'>
-			<h1 className='w-full text-3xl font-bold text-[#00df9a]'>REACT.</h1>
-			<ul className='hidden md:flex bg-black'>
-				<li className='p-4'>Home</li>
-				<li className='p-4'>Company</li>
-				<li className='p-4'>Resources</li>
-				<li className='p-4'>About</li>
-				<li className='p-4'>Contact</li>
-			</ul>
-			<div onClick={handleNav} className='block md:hidden cursor-pointer'>
-				{nav ? (
-					<AiOutlineClose size={20} />
-				) : (
-					<AiOutlineMenu size={20} />
-				)}
+		<div className='shadow-md z-10 w-full  fixed top-0 left-0'>
+			<div className='md:flex border-b  items-center justify-between bg-white  md:px-10 px-7'>
+				<div className='h-auto items-center'>
+					<Link
+						to='/'
+						aria-label='logo'
+						className='flex space-x-2 items-center'>
+						<img
+							src='/logo.png'
+							className='h-auto w-20 block lg:hidden'
+							alt=''
+						/>
+						<img
+							src='/Updated LogoDesktop.png'
+							className='h-[60px] w-48 hidden lg:block'
+							alt=''
+						/>
+					</Link>
+				</div>
+
+				<div
+					onClick={() => setOpen(!open)}
+					className='text-3xl absolute right-8 items-center mt-4 top-4 cursor-pointer md:hidden'>
+					{open ? (
+						<HiOutlineX
+							style={{
+								height: '20px',
+								width: '25px',
+							}}
+							className='m-auto h-4 w-6 rounded text-sky-900 transition duration-300'
+						/>
+					) : (
+						<>
+							<div
+								aria-hidden='true'
+								className='m-auto h-0.5 w-6 rounded bg-sky-900 transition duration-300'></div>
+							<div
+								aria-hidden='true'
+								className='m-auto mt-2 h-0.5 w-6 rounded bg-sky-900 transition duration-300'></div>
+						</>
+					)}
+				</div>
+
+				<ul
+					className={`md:flex md:items-center  md:pb-0 pb-12 absolute md:static  md:z-auto left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+						open ? ' ' : 'top-[-490px]'
+					}`}>
+					<div className='text-gray-600 lg:pr-4 '>
+						<ul className='space-y-6 tracking-wide  font-medium text-lg lg:text-sm lg:flex lg:space-y-0'>
+							<li className='text-md text-base'>
+								<Link
+									to='signin'
+									className='block md:px-4 transition hover:text-sky-700'>
+									<span>Home</span>
+								</Link>
+							</li>
+							<li className='text-base'>
+								<a
+									href='#'
+									className='block md:px-4 transition hover:text-sky-700'>
+									<span>Portfolio</span>
+								</a>
+							</li>
+							<li className='text-md text-base'>
+								<a
+									href='#'
+									className='block md:px-4 transition hover:text-sky-700'>
+									<span>Services</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div className='w-full space-y-2 border-sky-200 flex flex-col -ml-1 sm:flex-row lg:space-y-0 md:w-max lg:border-l'>
+						<button
+							type='button'
+							title='Start buying'
+							className='w-full py-2.5 text-xl px-5 text-center rounded-full transition active:bg-sky-200 focus:bg-sky-100 sm:w-max'>
+							<span className='block text-xl text-sky-800 font-semibold lg:text-sm'>
+								Sign up
+							</span>
+						</button>
+						<button
+							type='button'
+							title='Start buying'
+							className='w-full py-2.5  px-5 text-center rounded-full transition bg-gradient-to-b from-sky-400 to-cyan-300 sm:w-max'>
+							<span className='block text-xl text-sky-900 font-semibold lg:text-sm'>
+								Login
+							</span>
+						</button>
+					</div>
+
+					{/* <Button>Get Started</Button> */}
+				</ul>
 			</div>
-			<ul
-				className={
-					nav
-						? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500'
-						: 'ease-in-out duration-500 fixed left-[-100%]'
-				}>
-				<h1 className='w-full text-3xl font-bold text-[#00df9a] m-4'>
-					REACT.
-				</h1>
-				<li className='p-4 border-b border-gray-600'>Home</li>
-				<li className='p-4 border-b border-gray-600'>Company</li>
-				<li className='p-4 border-b border-gray-600'>Resources</li>
-				<li className='p-4 border-b border-gray-600'>About</li>
-				<li className='p-4'>Contact</li>
-			</ul>
 		</div>
 	);
 };
 
-export default Navbar;
+export default Nav;

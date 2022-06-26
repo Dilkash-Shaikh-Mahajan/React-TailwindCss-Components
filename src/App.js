@@ -1,21 +1,17 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-// import Navbar from './Components/Navbar';
-// import Analytics from './Components/Analytics';
-import Cards from './Components/Card';
-import Team from './Components/Team';
-import Blog from './Components/Blog';
-import Footer from './Components/Footer';
-import Navbars from './Components/Navbars';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ErrorPage from './Pages/Error404';
+import HomeScreen from './Pages/HomeScreen';
+import SignIn from './Pages/SignIn';
 export default function App() {
 	return (
 		<>
-			{/* <Navbar /> */}
-			<Navbars />
-			{/* <Analytics /> */}
-			<Blog />
-			<Team />
-			<Cards />
-			<Footer />
+			<BrowserRouter>
+				<Routes>
+					<Route path='/' element={<HomeScreen />}></Route>
+					<Route path='signin' element={<SignIn />} />
+					<Route path='*' element={<ErrorPage />} />
+				</Routes>
+			</BrowserRouter>
 		</>
 	);
 }
